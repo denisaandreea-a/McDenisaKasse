@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="added .gitignore" />
+    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDonaldsKasse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDonaldsKasse/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +124,7 @@
       <workItem from="1767044898184" duration="826000" />
       <workItem from="1767641246077" duration="721000" />
       <workItem from="1767786311437" duration="222000" />
-      <workItem from="1767786626031" duration="2274000" />
+      <workItem from="1767786626031" duration="2756000" />
     </task>
     <task id="LOCAL-00001" summary="added .gitignore">
       <option name="closed" value="true" />
@@ -132,7 +134,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767791874246</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1767792818676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767792818676</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated .gitignore">
+      <option name="closed" value="true" />
+      <created>1767793079581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767793079581</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +161,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="updated .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated .gitignore" />
   </component>
 </project>
