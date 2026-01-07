@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="McDenisaKasse.Views.OptionWindow"
+        Title="Auswahl" Width="400" Height="500"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="BorderOnly"
+        Background="AntiqueWhite"
+        Foreground="Black">
+
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/> 
+            <Setter Property="Foreground" Value="Black"/>   
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="MinHeight" Value="50"/>       
+        </Style>
+
+        <Style Selector="Button:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Styles>
+
+    <Border BorderBrush="Black" 
+            BorderThickness="2" 
+            Padding="20">
+        
+        <Grid RowDefinitions="Auto, *, Auto">
+            
+            <TextBlock Grid.Row="0"
+                       x:Name="TitleText" 
+                       FontSize="22" 
+                       FontWeight="Bold" 
+                       Foreground="Black" 
+                       HorizontalAlignment="Center" 
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="0,0,0,20"/>
+            
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ButtonContainer" Spacing="10"/>
+            </ScrollViewer>
+            
+            <Button Grid.Row="2"
+                    Content="Abbrechen" 
+                    Background="Red" 
+                    Foreground="White" 
+                    HorizontalAlignment="Stretch" 
+                    Click="OnCancelClick" 
+                    Margin="0,20,0,0"
+                    Height="50"/>
+        </Grid>
+    </Border>
+</Window>

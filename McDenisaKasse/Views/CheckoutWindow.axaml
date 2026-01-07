@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="McDenisaKasse.Views.CheckoutWindow"
+        Title="Bestellung abschließen" Width="500" Height="750"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="BorderOnly"
+        Background="AntiqueWhite">
+
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,5,0,2"/>
+        </Style>
+        <Style Selector="RadioButton">
+            <Setter Property="Margin" Value="0,2"/>
+        </Style>
+    </Window.Styles>
+
+    <Border BorderBrush="Black" BorderThickness="2" Padding="20">
+        <Grid RowDefinitions="Auto, Auto, *, Auto">
+            
+            <TextBlock Grid.Row="0" Text="Lieferdaten eingeben" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <ScrollViewer Grid.Row="2">
+                <StackPanel>
+                    <TextBlock Text="Vorname:"/>
+                    <TextBox x:Name="TxtVorname" Watermark="Max"/>
+
+                    <TextBlock Text="Name:"/>
+                    <TextBox x:Name="TxtName" Watermark="Mustermann"/>
+
+                    <TextBlock Text="Adresse:"/>
+                    <TextBox x:Name="TxtAdresse" Watermark="Musterstraße 1, 12345 Berlin"/>
+
+                    <TextBlock Text="Wann soll geliefert werden?" Margin="0,15,0,5"/>
+                    <StackPanel Margin="10,0,0,0">
+                        <RadioButton GroupName="Lieferzeit" Content="So schnell wie möglich" IsChecked="True"/>
+                        <RadioButton GroupName="Lieferzeit" Content="In 30 Minuten"/>
+                        <RadioButton GroupName="Lieferzeit" Content="In 1 Stunde"/>
+                        <RadioButton GroupName="Lieferzeit" Content="In 2 Stunden"/>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton GroupName="Lieferzeit" Content="Uhrzeit: " VerticalAlignment="Center"/>
+                            <TimePicker ClockIdentifier="24HourClock" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="Kommentar zur Bestellung:" Margin="0,15,0,5"/>
+                    <TextBox x:Name="TxtKommentar" Height="60" AcceptsReturn="True" TextWrapping="Wrap" Watermark="z.B. Bitte nicht klingeln..."/>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Row="3" Spacing="10" Margin="0,20,0,0">
+                <Button Content="Bar zahlen" Background="Green" Foreground="White" 
+                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                        Height="50" FontSize="18" FontWeight="Bold"
+                        Click="OnBarClick"/>
+                
+                <Button Content="Mit Karte zahlen" Background="DodgerBlue" Foreground="White" 
+                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                        Height="50" FontSize="18" FontWeight="Bold"
+                        Click="OnKarteClick"/>
+                
+                <Button Content="Zurück" Background="Gray" Foreground="White" 
+                        HorizontalAlignment="Center" Width="100" Margin="0,10,0,0"
+                        Click="OnCancelClick"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

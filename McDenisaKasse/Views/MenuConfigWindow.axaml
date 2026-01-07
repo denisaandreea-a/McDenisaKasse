@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="McDenisaKasse.Views.MenuConfigWindow"
+        Title="Menü Konfiguration" Width="500" Height="700"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="BorderOnly"
+        Background="AntiqueWhite">
+
+    <Window.Styles>
+        <Style Selector="Border.OptionCard">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        
+        <Style Selector="Border.OptionCard:pointerover">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <Style Selector="CheckBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+    </Window.Styles>
+
+    <Border BorderBrush="Black" BorderThickness="2" Padding="20">
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
+            
+            <TextBlock Grid.Row="0" Text="Big Mac Menü" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <TextBlock Grid.Row="1" Text="Pommes Soße wählen:" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="0,0,0,10"/>
+            
+            <StackPanel Grid.Row="2" Spacing="5">
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkMayo" Content="Mayonnaise"/>
+                </Border>
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkKetchup" Content="Ketchup"/>
+                </Border>
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkSuessSauer" Content="Süßsauer"/>
+                </Border>
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkCurry" Content="Curry"/>
+                </Border>
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkBBQ" Content="BBQ"/>
+                </Border>
+                <Border Classes="OptionCard">
+                    <CheckBox x:Name="ChkSenf" Content="Senf"/>
+                </Border>
+            </StackPanel>
+
+            <TextBlock Grid.Row="4" Text="Getränk wählen:" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="0,10,0,10"/>
+            
+            <WrapPanel Grid.Row="5" HorizontalAlignment="Center">
+                <Button Content="Cola" Width="100" Height="60" Margin="5" Background="RosyBrown" Click="OnDrinkClick"/>
+                <Button Content="Fanta" Width="100" Height="60" Margin="5" Background="LightSalmon" Click="OnDrinkClick"/>
+                <Button Content="Sprite" Width="100" Height="60" Margin="5" Background="DarkSeaGreen" Click="OnDrinkClick"/>
+                <Button Content="Ice Tea" Width="100" Height="60" Margin="5" Background="Khaki" Click="OnDrinkClick"/>
+            </WrapPanel>
+
+            <Button Grid.Row="6" Content="Abbrechen" Width="200" Height="50" 
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                    Background="Red" Foreground="White" FontWeight="Bold"
+                    Margin="0,30,0,0" Click="OnCancelClick"/>
+        </Grid>
+    </Border>
+</Window>

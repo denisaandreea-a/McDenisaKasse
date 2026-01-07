@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="McDonaldsKasse/App.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/CheckoutWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/IngredientsWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/MainWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/MenuConfigWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/MenuWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/OptionWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/Pice.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+        <entry key="McDonaldsKasse/Views/PriceWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
