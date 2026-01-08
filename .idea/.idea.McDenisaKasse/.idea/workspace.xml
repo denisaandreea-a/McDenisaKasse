@@ -8,18 +8,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="MVVM">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/App.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/McDenisaKasse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/McDenisaKasse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MainWindowViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/OptionWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/OptionWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +139,7 @@
       <workItem from="1767786311437" duration="222000" />
       <workItem from="1767786626031" duration="245000" />
       <workItem from="1767793157610" duration="487000" />
-      <workItem from="1767885759483" duration="1418000" />
+      <workItem from="1767885759483" duration="5311000" />
     </task>
     <task id="LOCAL-00001" summary="updated .gitignore">
       <option name="closed" value="true" />
@@ -154,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767793421251</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MVVM">
+      <option name="closed" value="true" />
+      <created>1767887190401</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767887190401</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +188,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="updated .gitignore" />
     <MESSAGE value="cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
+    <MESSAGE value="MVVM" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVVM" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="fu" />
   </component>
 </project>

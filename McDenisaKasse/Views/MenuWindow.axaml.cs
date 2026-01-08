@@ -7,14 +7,16 @@ namespace McDenisaKasse.Views
 {
     public partial class MenuWindow : Window
     {
-        // Wir speichern das ViewModel in einer Variable, um darauf zuzugreifen
+        // Ich speichere ViewModel hier in variable damit ich später benutzen kann.
+        // Readonly ist gut für Sicherheit
         private readonly MenuViewModel _viewModel;
 
         public MenuWindow()
         {
             InitializeComponent();
             
-            // Hier verbinden wir View und ViewModel
+            // Hier ich erstelle neue ViewModel und verbinde es mit View.
+            // DataContext sehr wichtig damit Binding in XAML funktioniert
             _viewModel = new MenuViewModel();
             DataContext = _viewModel;
         }
@@ -22,22 +24,27 @@ namespace McDenisaKasse.Views
         // =========================================================
         // PRODUKTE KLICKEN (UI Logik & Dialoge)
         // =========================================================
+        // Methode muss async sein, weil ich mit "await" auf User warten muss (Popups).
         public async void OnProduktClick(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
-            if (button.Content == null) return;
+            if (button.Content == null) return; // Safety check
 
             string produktName = button.Content.ToString();
             
-            // --- Logik für Popups und Fragen bleibt hier (View-Sache) ---
+            // --- Logik für Popups bleibt in View (UI Sache) ---
+            // ViewModel darf keine Fenster öffnen direkt.
             
             if (produktName.Contains("Menu"))
             {
+                // Ich mache Name sauber (lösche "Menu" Wort)
                 string burgerName = produktName.Replace(" Menu", "");
-                var dialog = new MenuConfigWindow(burgerName);
-                await dialog.ShowDialog(this);
                 
-                // WENN fertig -> Daten an ViewModel geben
+                // Ich erstelle Dialog Fenster für Konfiguration
+                var dialog = new MenuConfigWindow(burgerName);
+                await dialog.ShowDialog(this); // Code wartet hier bis User fertig
+                
+                // WENN User hat gespeichert (nicht null) -> Daten an ViewModel geben
                 if (dialog.ResultString != null) 
                 {
                     _viewModel.FuegeProduktHinzu(dialog.ResultString + " Menü");
@@ -47,16 +54,17 @@ namespace McDenisaKasse.Views
             {
                 string hauptspeise = produktName.Replace("Happy Meal ", "");
                 
-                // Wir fragen die Beilagen ab
+                // Ich frage User nach Beilage mit meine Hilfsfunktion
                 var beilagen = new List<string> { "Apfeltüte", "Fruchtquatsch", "McFreezy Eis" };
                 string beilage = await FrageStellen("Wähle ein Nachtisch", beilagen);
-                if (beilage == null) return; 
+                
+                if (beilage == null) return; // Wenn User bricht ab
 
                 var getraenke = new List<string> { "Capri-Sun", "Wasser", "O-Saft", "Bio-Apfelschorle" };
                 string getraenk = await FrageStellen("Wähle ein Getränk:", getraenke);
                 if (getraenk == null) return; 
 
-                // Alles an ViewModel senden
+                // Alles fertig, ich sende Daten an ViewModel Logic
                 _viewModel.FuegeProduktHinzu($"Happy Meal {hauptspeise}", $"({beilage}, {getraenk})");
             }
             else if (produktName.Contains("Pommes"))
@@ -96,6 +104,7 @@ namespace McDenisaKasse.Views
             }
             else if (produktName.Contains("Getränk") || produktName == "Cola" || produktName == "Fanta")
             {
+                // Wenn Button heißt nur "Getränk", ich frage Sorte. Sonst ich nehme Name von Button.
                 string sorte = produktName == "Getränk" ? await FrageStellen("Sorte:", new List<string> { "Cola", "Fanta", "Sprite", "Ice Tea" }) : produktName;
                 if (sorte == null) return;
                 string groesse = await FrageStellen("Größe?", new List<string> { "0,25l", "0,4l", "0,5l" });
@@ -116,7 +125,7 @@ namespace McDenisaKasse.Views
             }
             else
             {
-                // Standard Burger ohne Extra-Fragen
+                // Standard Produkt ohne Fragen (einfach hinzufügen)
                 _viewModel.FuegeProduktHinzu(produktName);
             }
         }
@@ -126,14 +135,15 @@ namespace McDenisaKasse.Views
         // =========================================================
         private async void OnZutatenClick(object sender, RoutedEventArgs e)
         {
-            // Wir prüfen im ViewModel, was ausgewählt ist
+            // Ich frage ViewModel: Welche Position ist selektiert in Liste?
             var selectedItem = _viewModel.SelektiertePosition;
 
-            if (selectedItem == null) return;
+            if (selectedItem == null) return; // Wenn nichts ausgewählt, ich mache return
 
             string name = selectedItem.Name;
             
-            // Zutaten Liste definieren (Logik kann hier bleiben, da UI-bezogen für das Dialogfenster)
+            // Hier ich definiere Liste für Zutaten Fenster.
+            // Logik ist hier okay weil es ist UI Darstellung.
             List<string> zutaten = new List<string>();
             if (name.Contains("Big Mac")) zutaten = new List<string> { "Fleisch", "Salat", "Käse", "Zwiebeln", "Gurke", "Big Mac Soße" };
             else if (name.Contains("Royal TS")) zutaten = new List<string> { "Fleisch", "Salat", "Käse", "Tomate", "Zwiebeln", "Soße" };
@@ -142,38 +152,40 @@ namespace McDenisaKasse.Views
             else if (name.Contains("McChicken")) zutaten = new List<string> { "Chicken Patty", "Salat", "Soße" };
             else if (name.Contains("McRib")) zutaten = new List<string> { "Pork Patty", "Zwiebeln", "Gurke", "BBQ Soße" };
             else if (name.Contains("Pommes")) zutaten = new List<string> { "Salz" };
-            else return; // Keine Zutaten bekannt
+            else return; // Produkt hat keine Zutaten Liste
 
+            // Ich zeige Fenster für Zutaten ändern
             var fenster = new IngredientsWindow(name, zutaten);
             await fenster.ShowDialog(this);
 
+            // Wenn Fenster ist zu und ResultString ist da
             if (fenster.ResultString != null)
             {
-                // Update über das ViewModel
-                // Wir übergeben das ausgewählte Objekt und den neuen String
+                // Ich sage ViewModel bitte update Item.
+                // Ich baue String zusammen mit Klammern.
                 string neuerZusatz = fenster.ResultString == "" ? "" : $"({fenster.ResultString})";
                 _viewModel.AktualisierePosition(selectedItem, neuerZusatz);
             }
         }
 
-        // Hilfsmethode
+        // Hilfsmethode damit ich Code nicht doppelt schreiben muss für OptionWindow
         private async System.Threading.Tasks.Task<string> FrageStellen(string titel, List<string> antworten)
         {
             var fenster = new OptionWindow(titel, antworten);
             await fenster.ShowDialog(this);
-            return fenster.SelectedOption;
+            return fenster.SelectedOption; // Gibt String zurück was User geklickt hat
         }
 
-        private void OnSchliessenClick(object sender, RoutedEventArgs e) { this.Close(); }
+        private void OnSchliessenClick(object sender, RoutedEventArgs e) { this.Close(); } // Fenster zu
         
         private void OnPreiseClick(object sender, RoutedEventArgs e)
         {
-            new PriceWindow().Show();
+            new PriceWindow().Show(); // Preis Tabelle zeigen
         }
 
         private void OnAbschliessenClick(object sender, RoutedEventArgs e)
         {
-            new CheckoutWindow().Show();
+            new CheckoutWindow().Show(); // Zur Kasse gehen
         }
     }
 }

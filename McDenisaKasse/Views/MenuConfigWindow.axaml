@@ -5,16 +5,14 @@
         WindowStartupLocation="CenterOwner"
         SystemDecorations="BorderOnly"
         Background="AntiqueWhite">
-
+    
     <Window.Styles>
         <Style Selector="Border.OptionCard">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="5"/>
-            <Setter Property="Padding" Value="8"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
-        </Style>
+            <Setter Property="CornerRadius" Value="5"/> <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,0,0,8"/> </Style>
         
         <Style Selector="Border.OptionCard:pointerover">
             <Setter Property="Background" Value="White"/>
@@ -39,6 +37,7 @@
     </Window.Styles>
 
     <Border BorderBrush="Black" BorderThickness="2" Padding="20">
+        
         <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, *">
             
             <TextBlock Grid.Row="0" Text="Big Mac Menü" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,20"/>

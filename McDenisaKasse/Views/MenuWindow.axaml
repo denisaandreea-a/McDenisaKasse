@@ -137,24 +137,36 @@
                     </Style>
                 </StackPanel.Styles>
 
-                <Button Content="Zutaten ändern" Background="LightSlateGray" BorderThickness="1" BorderBrush="DimGray"
+                <Button Content="Zutaten ändern" 
+                        Background="LightSlateGray" 
+                        BorderThickness="1" 
+                        BorderBrush="DimGray"
                         Click="OnZutatenClick"/>
                 
-                <Button Content="Preise anzeigen" Background="LightSlateGray" BorderThickness="1" BorderBrush="DimGray"
+                <Button Content="Preise anzeigen" 
+                        Background="LightSlateGray"
+                        BorderThickness="1" 
+                        BorderBrush="DimGray"
                         Click="OnPreiseClick"/> 
               
                 <Button Content="Bestellung abschließen" Background="SeaGreen" Click="OnAbschliessenClick" BorderThickness="1" BorderBrush="DimGray"/>
                 
-                <Button Content="Position löschen" 
-                        Background="Crimson" 
+                <Button Content="Produkt löschen" 
+                        Background="DimGray" 
                         Command="{Binding LoeschePositionCommand}"
                         BorderThickness="1" 
                         BorderBrush="DimGray"/>
                 
-                <Button Content="Zurück / Schließen" 
-                        Background="Gray" 
+                <Button Content="Schließen" 
+                        Background="IndianRed" 
                         Click="OnSchliessenClick"
                         FontSize="14" Height="40"/>
+                
+                <Image Source="avares://McDenisaKasse/Assets/Adobe Express Pic - file.png"
+                       Classes="Bounce"
+                       Width="300"
+                       Height="300"
+                       Margin="0,0,0,0" />
             </StackPanel>
         </Grid>
     </Grid>
