@@ -4,11 +4,8 @@ namespace McDenisaKasse.Models
 {
     public static class ProductService
     {
-        // ==========================================
+    
         // ZUTATEN (für den "Zutaten ändern" Button)
-        // ==========================================
-        // Die hast du nicht gepostet, ich lasse die Standard-Werte drin, 
-        // damit der Button nicht kaputt geht.
         public static List<string> GetZutatenFuerProdukt(string produktName)
         {
             if (produktName.Contains("Big Mac")) 
@@ -29,10 +26,7 @@ namespace McDenisaKasse.Models
             return new List<string>();
         }
 
-        // ==========================================
-        // DEINE OPTIONEN (genau wie in deinem Code)
-        // ==========================================
-        
+        // OPTIONEN (genau wie in deinem Code)
         // Für Pommes & Milkshake Größe (in deinem Code war das gleich: Klein, Mittel, Groß)
         public static List<string> GetStandardGroessen() 
         {
@@ -50,10 +44,10 @@ namespace McDenisaKasse.Models
             return new List<string> { "Mayonaisse", "Ketchup", "Süßsauer", "Curry", "BBQ", "Senf" };
         }
 
-        // Soßen Extra (Ohne Curry, wie in deinem Snippet)
+        // Soßen Extra 
         public static List<string> GetExtraSossen()
         {
-            return new List<string> { "Mayonnaise", "Ketchup", "Süßsauer", "BBQ", "Senf" };
+            return new List<string> { "Mayonnaise", "Ketchup", "Süßsauer", "Curry", "BBQ", "Senf" };
         }
 
         public static List<string> GetEisToppings()
