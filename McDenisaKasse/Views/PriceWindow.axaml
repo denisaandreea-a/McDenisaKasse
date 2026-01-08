@@ -69,7 +69,7 @@
                             <TextBlock Classes="Category" Text="Desserts &amp; Getränke"/>
                             <TextBlock Classes="Item" Text="Getränk (0,4l / 0,5l)"/>
                             <TextBlock Classes="Item" Text="Milkshake"/>
-                            <TextBlock Classes="Item" Text="Eis / McFlurry"/>
+                            <TextBlock Classes="Item" Text="Eis"/>
                             <TextBlock Classes="Item" Text="Apfeltasche"/>
                             <TextBlock Classes="Item" Text="McCafé Spezialität"/>
                         </StackPanel>

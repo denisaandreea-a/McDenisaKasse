@@ -1,7 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:McDenisaKasse.ViewModels"
         x:Class="McDenisaKasse.Views.MenuWindow"
-        x:CompileBindings="False"
+        x:DataType="vm:MenuViewModel"
+        x:CompileBindings="True"
         Title="Bestellung" 
         Width="1200" 
         Height="800"
@@ -25,21 +27,21 @@
                     <Setter Property="Foreground" Value="DimGray"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="BorderThickness" Value="1"></Setter>
-                    <Setter Property="BorderBrush" Value="Gray"></Setter>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
                 </Style>
             </StackPanel.Styles>
 
-            <Button Content="1" Click="OnNummerClick"/>
-            <Button Content="2" Click="OnNummerClick"/>
-            <Button Content="3" Click="OnNummerClick"/>
-            <Button Content="4" Click="OnNummerClick"/>
-            <Button Content="5" Click="OnNummerClick"/>
-            <Button Content="6" Click="OnNummerClick"/>
-            <Button Content="7" Click="OnNummerClick"/>
-            <Button Content="8" Click="OnNummerClick"/>
-            <Button Content="9" Click="OnNummerClick"/>
-            <Button Content="0" Click="OnNummerClick"/>
+            <Button Content="1" Command="{Binding NummerEingabeCommand}" CommandParameter="1"/>
+            <Button Content="2" Command="{Binding NummerEingabeCommand}" CommandParameter="2"/>
+            <Button Content="3" Command="{Binding NummerEingabeCommand}" CommandParameter="3"/>
+            <Button Content="4" Command="{Binding NummerEingabeCommand}" CommandParameter="4"/>
+            <Button Content="5" Command="{Binding NummerEingabeCommand}" CommandParameter="5"/>
+            <Button Content="6" Command="{Binding NummerEingabeCommand}" CommandParameter="6"/>
+            <Button Content="7" Command="{Binding NummerEingabeCommand}" CommandParameter="7"/>
+            <Button Content="8" Command="{Binding NummerEingabeCommand}" CommandParameter="8"/>
+            <Button Content="9" Command="{Binding NummerEingabeCommand}" CommandParameter="9"/>
+            <Button Content="0" Command="{Binding NummerEingabeCommand}" CommandParameter="0"/>
         </StackPanel>
 
          
@@ -50,97 +52,77 @@
                 <ColumnDefinition Width="1*"/> 
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="0" 
-                    BorderBrush="Gray" 
-                    BorderThickness="1" 
-                    Margin="0,0,10,0" 
-                    Background="White">
-                
+            <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" Margin="0,0,10,0" Background="White">
                 <Grid RowDefinitions="*, Auto">
                     <ListBox x:Name="OrderListBox" 
                              Grid.Row="0"
-                             ItemsSource="{Binding BestellListe}" 
+                             ItemsSource="{Binding Bestellungen}"
+                             SelectedItem="{Binding SelektiertePosition}"
                              Background="Transparent"
                              FontSize="16"/>
 
                     <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1,0,0" Padding="10" Background="WhiteSmoke">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                             <TextBlock Text="Gesamt: " FontWeight="Bold" FontSize="20"/>
-                            <TextBlock x:Name="TxtTotal" Text="0,00 €" FontWeight="Bold" FontSize="20" Foreground="Green"/>
+                            <TextBlock Text="{Binding GesamtSummeText}" FontWeight="Bold" FontSize="20" Foreground="Green"/>
                         </StackPanel>
                     </Border>
                 </Grid>
             </Border>
 
-            <Border Grid.Column="1" 
-                    Background="White" 
-                    CornerRadius="25" 
-                    Padding="10" 
-                    Margin="5,0" 
-                    BorderThickness="1" 
-                    BorderBrush="Gray">
-                
-                <UniformGrid Columns="5" 
-             HorizontalAlignment="Stretch" 
-             VerticalAlignment="Stretch"
-             Margin="5">
+            <Border Grid.Column="1" Background="White" CornerRadius="25" Padding="10" Margin="5,0" BorderThickness="1" BorderBrush="Gray">
+                <UniformGrid Columns="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                    <UniformGrid.Styles>
+                        <Style Selector="Button">
+                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                            <Setter Property="VerticalAlignment" Value="Stretch"/>
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="FontWeight" Value="DemiBold"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="BorderBrush" Value="Gray"/>
+                        </Style>
+                    </UniformGrid.Styles>
 
-    <UniformGrid.Styles>
-        <Style Selector="Button">
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-        </Style>
-    </UniformGrid.Styles>
+                    <Button Content="Big Mac Menu" Background="Goldenrod" Click="OnProduktClick"/>
+                    <Button Content="McChicken Menu" Background="Goldenrod" Click="OnProduktClick"/>
+                    <Button Content="Royal TS Menu" Background="Goldenrod" Click="OnProduktClick"/>
+                    <Button Content="Royal Käse Menu" Background="Goldenrod" Click="OnProduktClick"/>
+                    <Button Content="McRib Menu" Background="Goldenrod" Click="OnProduktClick"/>
+                    
+                    <Button Content="Happy Meal 4er-Nuggets" Background="DarkSalmon" Click="OnProduktClick"/>
+                    <Button Content="Happy Meal Cheese-burger" Background="DarkSalmon" Click="OnProduktClick"/>
+                    <Button Content="Happy Meal Hamburger" Background="DarkSalmon" Click="OnProduktClick"/>
+                    
+                    <Button Content="Big Mac" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="McChicken" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Royal TS" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Royal Käse" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="McRib" Background="SandyBrown" Click="OnProduktClick"/>
 
-    <Button Content="Big Mac Menu" Background="Goldenrod" Click="OnProduktClick"/>
-    <Button Content="McChicken Menu" Background="Goldenrod" Click="OnProduktClick"/>
-    <Button Content="Royal TS Menu" Background="Goldenrod" Click="OnProduktClick"/>
-    <Button Content="Royal Käse Menu" Background="Goldenrod" Click="OnProduktClick"/>
-    <Button Content="McRib Menu" Background="Goldenrod" Click="OnProduktClick"/>
-    
-    <Button Content="Happy Meal 4er-Nuggets" Background="DarkSalmon" Click="OnProduktClick"/>
-    <Button Content="Happy Meal Cheese-burger" Background="DarkSalmon" Click="OnProduktClick"/>
-    <Button Content="Happy Meal Hamburger" Background="DarkSalmon" Click="OnProduktClick"/>
-    
-    <Button Content="Big Mac" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="McChicken" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Royal TS" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Royal Käse" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="McRib" Background="SandyBrown" Click="OnProduktClick"/>
-
-    <Button Content="Cheese-burger" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Double-cheese-burger" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Chicken-burger" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Hamburger" Background="SandyBrown" Click="OnProduktClick"/>
-    <Button Content="Nuggets" Background="Peru" Click="OnProduktClick"/>
-    <Button Content="Pommes" Background="Peru" Click="OnProduktClick"/>
-    
-    <Button Content="Soße" Background="Peru" Click="OnProduktClick"/>
-    <Button Content="Getränk" Background="Chocolate" Click="OnProduktClick"/>
-    <Button Content="Milkshake" Background="RosyBrown" Click="OnProduktClick"/>
-    <Button Content="Eis" Background="RosyBrown" Click="OnProduktClick"/>
-    <Button Content="Apfeltasche" Background="RosyBrown" Click="OnProduktClick"/>
-    
-    <Button Content="McCafé" Background="Tan" Click="OnProduktClick"/>
-
-</UniformGrid>
-                   
+                    <Button Content="Cheese-burger" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Double-cheese-burger" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Chicken-burger" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Hamburger" Background="SandyBrown" Click="OnProduktClick"/>
+                    <Button Content="Nuggets" Background="Peru" Click="OnProduktClick"/>
+                    <Button Content="Pommes" Background="Peru" Click="OnProduktClick"/>
+                    
+                    <Button Content="Soße" Background="Peru" Click="OnProduktClick"/>
+                    <Button Content="Getränk" Background="Chocolate" Click="OnProduktClick"/>
+                    <Button Content="Milkshake" Background="RosyBrown" Click="OnProduktClick"/>
+                    <Button Content="Eis" Background="RosyBrown" Click="OnProduktClick"/>
+                    <Button Content="Apfeltasche" Background="RosyBrown" Click="OnProduktClick"/>
+                    
+                    <Button Content="McCafé" Background="Tan" Click="OnProduktClick"/>
+                </UniformGrid>
             </Border>
 
-            <StackPanel Grid.Column="2" 
-                        Spacing="15" 
-                        Margin="10,0,0,0" 
-                        VerticalAlignment="Top">
+            <StackPanel Grid.Column="2" Spacing="15" Margin="10,0,0,0" VerticalAlignment="Top">
                 <StackPanel.Styles>
                     <Style Selector="Button">
                         <Setter Property="Height" Value="70"/>
@@ -150,31 +132,29 @@
                         <Setter Property="Foreground" Value="GhostWhite"/>
                         <Setter Property="HorizontalContentAlignment" Value="Center"/>
                         <Setter Property="VerticalContentAlignment" Value="Center"/>
-                        <Setter Property="BorderThickness" Value="1"></Setter>
-                        <Setter Property="BorderBrush" Value="Gray"></Setter>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>
                     </Style>
                 </StackPanel.Styles>
 
-                <Button Content="Zutaten ändern" 
-                        Background="LightSlateGray" 
-                        BorderThickness="1" 
-                        BorderBrush="DimGray"
+                <Button Content="Zutaten ändern" Background="LightSlateGray" BorderThickness="1" BorderBrush="DimGray"
                         Click="OnZutatenClick"/>
-                <Button Content="Preise anzeigen" 
-                        Background="LightSlateGray" 
-                        BorderThickness="1" 
-                        BorderBrush="DimGray"
+                
+                <Button Content="Preise anzeigen" Background="LightSlateGray" BorderThickness="1" BorderBrush="DimGray"
                         Click="OnPreiseClick"/> 
-                <Button Content="Bestellung abschließen" 
-                        Background="SeaGreen" 
-                        Click="OnAbschliessenClick" 
-                        BorderThickness="1" 
-                        BorderBrush="DimGray"/>
-                <Button Content="Bestellung abbrechen" 
+              
+                <Button Content="Bestellung abschließen" Background="SeaGreen" Click="OnAbschliessenClick" BorderThickness="1" BorderBrush="DimGray"/>
+                
+                <Button Content="Position löschen" 
                         Background="Crimson" 
-                        Click="OnSchliessenClick" 
+                        Command="{Binding LoeschePositionCommand}"
                         BorderThickness="1" 
                         BorderBrush="DimGray"/>
+                
+                <Button Content="Zurück / Schließen" 
+                        Background="Gray" 
+                        Click="OnSchliessenClick"
+                        FontSize="14" Height="40"/>
             </StackPanel>
         </Grid>
     </Grid>

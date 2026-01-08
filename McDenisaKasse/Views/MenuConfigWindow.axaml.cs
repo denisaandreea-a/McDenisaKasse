@@ -17,7 +17,7 @@ namespace McDenisaKasse.Views
             InitializeComponent();
         }
 
-        // DER NEUE KONSTRUKTOR (Der VIP-Eingang)
+        
         public MenuConfigWindow(string burgerName) : this()
         {
             _burgerName = burgerName;

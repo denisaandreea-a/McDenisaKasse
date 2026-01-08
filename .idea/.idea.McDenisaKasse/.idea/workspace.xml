@@ -8,7 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="" />
+    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/avalonia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/McDenisaKasse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/McDenisaKasse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MainWindowViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +73,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Project.McDenisaKasse.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.McDenisaKasse.executor&quot;: &quot;Run&quot;,
     &quot;.NET Project.McDonaldsKasse.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -124,6 +136,7 @@
       <workItem from="1767786311437" duration="222000" />
       <workItem from="1767786626031" duration="245000" />
       <workItem from="1767793157610" duration="487000" />
+      <workItem from="1767885759483" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="updated .gitignore">
       <option name="closed" value="true" />

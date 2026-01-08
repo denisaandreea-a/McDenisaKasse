@@ -3,6 +3,14 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="McDenisaKasse/App.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/CheckoutWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/IngredientsWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/MainWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/MenuConfigWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/MenuWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/OptionWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
+        <entry key="McDenisaKasse/Views/PriceWindow.axaml" value="McDenisaKasse/McDenisaKasse.csproj" />
         <entry key="McDonaldsKasse/App.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
         <entry key="McDonaldsKasse/Views/CheckoutWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
         <entry key="McDonaldsKasse/Views/IngredientsWindow.axaml" value="McDonaldsKasse/McDonaldsKasse.csproj" />
