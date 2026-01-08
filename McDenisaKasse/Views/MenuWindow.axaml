@@ -164,12 +164,13 @@
                         Click="OnSchliessenClick"
                         FontSize="14" Height="40"/>
                 
-                <Image Source="avares://McDenisaKasse/Assets/Adobe Express - file.png"
+                <Image Source="avares://McDenisaKasse/Assets/Adobe Express Pic - file.png"
                        Classes="Bounce"
-                       Width="300"
+                       Width="500"
                        Height="300"
                        Margin="0,0,0,0" />
             </StackPanel>
+           
         </Grid>
     </Grid>
 </Window>
