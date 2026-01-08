@@ -19,7 +19,7 @@ namespace McDenisaKasse.Views
             // 2. Zeige das neue Fenster an
             menuWindow.Show();                 
             
-            // 3.Schließe das aktuelle Start-Fenster (damit nur das neue offen ist)
+            // 3. Schließe das aktuelle Start-Fenster (damit nur das neue offen ist)
             this.Close();               
         }
 

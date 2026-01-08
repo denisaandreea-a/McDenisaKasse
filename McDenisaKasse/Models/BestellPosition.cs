@@ -5,7 +5,7 @@ namespace McDenisaKasse.Models
     public class BestellPosition
     {
         // Das sind Properties (Eigenschaften).
-        // { get; set; } heißt ich kann lesen und schreiben.
+        // get, set kann lesen und schreiben.
         public string Name { get; set; } = "";       // Name von Produkt
         public int Menge { get; set; } = 1;          // Wie viel Stück
         public decimal EinzelPreis { get; set; }     // Preis für ein Stück
@@ -13,14 +13,14 @@ namespace McDenisaKasse.Models
 
         // Hier ich benutze "Expression Body" (Pfeil =>).
         // Das rechnet Preis immer neu wenn ich abfrage. 
-        // Ist nur "get", man kann nicht setzen.
+        // Ist nur get, man kann nicht setzen.
         public decimal GesamtPreis => Menge * EinzelPreis;
 
         // Ich überschreibe ToString Methode von Basisklasse object.
-        // Das ist wichtig damit ListBox zeigt Text und nicht nur Klassenname
+        //wichtig damit ListBox zeigt Text und nicht nur Klassenname
         public override string ToString()
         {
-            // Ich prüfe ob ZusatzInfo ist leer.
+            // prüfe ob ZusatzInfo ist leer.
             // Wenn ja, ich mache leer String, sonst ich mache Leerzeichen davor.
             string zusatzText = string.IsNullOrEmpty(ZusatzInfo) ? "" : $" {ZusatzInfo}";
             

@@ -23,13 +23,13 @@ namespace McDenisaKasse.Views
             // Ich suche den TextBlock oben und schreibe Name rein (z.B. "Big Mac anpassen").
             this.FindControl<TextBlock>("TitleText").Text = $"{produktName} anpassen";
 
-            // Ich hole den StackPanel aus XAML. Da kommen gleich die Boxen rein.
+            // Ich hole StackPanel aus XAML. Da kommen gleich die Boxen rein.
             var container = this.FindControl<StackPanel>("CheckboxContainer");
 
             // Jetzt ich mache Loop für jede Zutat in der Liste
             foreach (var zutat in zutaten)
             {
-                // Ich erstelle neue Checkbox mit Code (nicht in Designer)
+                // Erstelle neue Checkbox mit Code (nicht in Designer)
                 var cb = new CheckBox();
                 cb.Content = zutat;      // Name von Zutat (z.B. "Käse")
                 cb.IsChecked = true;     // Am Anfang ist Haken drin (Standard ist immer mit alles)
@@ -44,7 +44,7 @@ namespace McDenisaKasse.Views
             }
         }
 
-        // Das braucht Avalonia System, sonst Error
+        // braucht Avalonia System, sonst Error
         public IngredientsWindow() { InitializeComponent(); }
 
         // Wenn User drückt auf "Speichern" (Grün Button)

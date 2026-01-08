@@ -6,20 +6,20 @@ namespace McDenisaKasse.Views
 {
     public partial class MenuConfigWindow : Window
     {
-        // Hier speichern wir das Ergebnis. 
-        // Public weil Hauptfenster muss das lesen später.
+        // speichere ich das Ergebnis. 
+        // Public : Hauptfenster muss das lesen später.
         public string ResultString { get; private set; } = null;
         
-        // Private Variable. Ich muss mir den Name merken für später.
+        // Private Variable(muss mir den Name merken für später)
         private string _burgerName;
 
-        // Das ist Standard Konstruktor, Avalonia braucht das.
+        // standard Konstruktor, Avalonia braucht das.
         public MenuConfigWindow()
         {
             InitializeComponent();
         }
 
-        // Hier ich bekomme Name von Burger beim Start (z.B. "Big Mac").
+        // Hier ich bekomme Name von Burger beim Start (zB "Big Mac").
         // "this()" ruft den Konstruktor oben auf für InitializeComponent.
         public MenuConfigWindow(string burgerName) : this()
         {
