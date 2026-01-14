@@ -8,16 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Models/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Models/ProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/ViewModels/CheckoutViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/ViewModels/CheckoutViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MenuWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MenuWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuConfigWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml.cs" afterDir="false" />
-    </list>
+    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +127,7 @@
       <workItem from="1767786626031" duration="245000" />
       <workItem from="1767793157610" duration="487000" />
       <workItem from="1767885759483" duration="8324000" />
-      <workItem from="1768345168005" duration="2518000" />
+      <workItem from="1768345168005" duration="2907000" />
     </task>
     <task id="LOCAL-00001" summary="updated .gitignore">
       <option name="closed" value="true" />
@@ -178,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767912216906</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Verbesserungen">
+      <option name="closed" value="true" />
+      <created>1768395013396</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768395013396</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +203,8 @@
     <MESSAGE value="MVVM" />
     <MESSAGE value="MVVM Muster, Animationen und Kommentare" />
     <MESSAGE value="MVVM update" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVVM update" />
+    <MESSAGE value="Verbesserungen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verbesserungen" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="fu" />
   </component>
 </project>

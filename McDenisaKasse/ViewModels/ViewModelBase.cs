@@ -2,6 +2,7 @@
 
 namespace McDenisaKasse.ViewModels;
 
-public abstract class ViewModelBase : ObservableObject
+// Geändert von ObservableObject zu ObservableValidator für die Datenprüfung
+public abstract class ViewModelBase : ObservableValidator
 {
 }

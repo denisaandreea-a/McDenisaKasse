@@ -1,66 +1,65 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using System.ComponentModel.DataAnnotations; // für Validierung
+using System.Threading.Tasks; //für Nebenläufigkeit (async)
 
 namespace McDenisaKasse.ViewModels
 {
-    // Logik von Kasse. 
-    // Erbt von ObservableObject damit UI update bekommt automatisch.
-    public partial class CheckoutViewModel : ObservableObject
+    public partial class CheckoutViewModel : ViewModelBase
     {
-        // DATEN (Properties)
-        
-        // Mit [ObservableProperty] nicht viel Code schreiben (Computer macht automatisch getter, setter und PropertyChanged Event)
-        
         [ObservableProperty]
-        private string _vorname;
+        [NotifyDataErrorInfo] // Zeigt Fehler in der UI an
+        [Required(ErrorMessage = "Vorname ist erforderlich.")]
+        [MinLength(2, ErrorMessage = "Name zu kurz.")]
+        [NotifyCanExecuteChangedFor(nameof(BarZahlenCommand))]
+        [NotifyCanExecuteChangedFor(nameof(KarteZahlenCommand))]
+        private string _vorname = "";
 
         [ObservableProperty]
-        private string _name;
+        [NotifyDataErrorInfo]
+        [Required(ErrorMessage = "Name ist erforderlich.")]
+        [MinLength(2, ErrorMessage = "Name zu kurz.")]
+        [NotifyCanExecuteChangedFor(nameof(BarZahlenCommand))]
+        [NotifyCanExecuteChangedFor(nameof(KarteZahlenCommand))]
+        private string _name = "";
 
         [ObservableProperty]
-        private string _adresse;
+        [NotifyDataErrorInfo]
+        [Required(ErrorMessage = "Adresse fehlt für die Lieferung.")]
+        [MinLength(10, ErrorMessage = "Bitte vollständige Adresse angeben.")]
+        [NotifyCanExecuteChangedFor(nameof(BarZahlenCommand))]
+        [NotifyCanExecuteChangedFor(nameof(KarteZahlenCommand))]
+        private string _adresse = "";
 
-        // Default Wert ist leerer String damit nicht null error kommt
         [ObservableProperty]
         private string _kommentar = "";
-        
-        // COMMANDS (Aktionen für Buttons)
-        // Das ersetzt "Click" Event
-        [RelayCommand]
-        private void BarZahlen()
+
+        public CheckoutViewModel()
         {
-            // Hier ich simuliere speichern.
-            Console.WriteLine("Zahlung BAR gestartet...");
-            Console.WriteLine($"Kunde: {Vorname} {Name}");
-            
-            if (string.IsNullOrEmpty(Kommentar))
-            {
-                Console.WriteLine("Kein Kommentar da.");
-            }
-            else
-            {
-                Console.WriteLine($"Kunde sagt: {Kommentar}");
-            }
-            
-            Console.WriteLine("Fertig mit Barzahlung.");
+            // Prüft alle Felder beim Start, damit Buttons ggf. gesperrt sind
+            ValidateAllProperties();
         }
 
-        [RelayCommand]
-        private void KarteZahlen()
+        // Hilfsmethode: Buttons sind nur klickbar, wenn HasErrors "false" ist
+        private bool KannBezahlen() => !HasErrors;
+
+        [RelayCommand(CanExecute = nameof(KannBezahlen))]
+        private async Task BarZahlen()
         {
-            Console.WriteLine("Zahlung KARTE gestartet...");
-            // Ich prüfe ob Adresse da ist für Lieferung
-            if (string.IsNullOrEmpty(Adresse))
-            {
-                Console.WriteLine("ACHTUNG: Keine Adresse gegeben!");
-            }
-            else
-            {
-                Console.WriteLine($"Lieferung geht an: {Adresse}");
-            }
-            
-            Console.WriteLine("Karte akzeptiert. Geld weg.");
+            // Simuliert einen asynchronen Speichervorgang (Nebenläufigkeit)
+            Console.WriteLine("Verarbeite Barzahlung...");
+            await Task.Delay(2000); 
+            Console.WriteLine($"Erfolgreich! Danke {Vorname}.");
+        }
+
+        [RelayCommand(CanExecute = nameof(KannBezahlen))]
+        private async Task KarteZahlen()
+        {
+            // Simuliert Verbindung zum Kartenterminal
+            Console.WriteLine("Verbindung zum Terminal...");
+            await Task.Delay(3000);
+            Console.WriteLine("Zahlung autorisiert.");
         }
     }
 }
