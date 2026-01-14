@@ -1,57 +1,54 @@
 classDiagram
-    %% Hauptfenster (Die Zentrale)
+    class ViewModelBase {
+        <<abstract>>
+        +ValidateAllProperties()
+        +bool HasErrors
+    }
+
+    class MainWindow {
+        +OnBestellenClick()
+        +OnAbbrechenClick()
+    }
+
     class MenuWindow {
-        +ObservableCollection~string~ BestellListe
-        -int _aktuelleMenge
-        +MenuWindow()
-        -decimal GetEinzelPreis(string name)
-        -void UpdateTotal()
-        -void FuegeHinzu(string name)
-        -void OnProduktClick()
-        -void OnZutatenClick()
-        -void OnNummerClick()
-        -void OnAbschliessenClick()
-        -void OnPreiseClick()
-        -Task~string~ FrageStellen()
+        -SoundPlayer musicPlayer
+        +PlayBackgroundMusic(string)
+        +OnProduktClick()
+        +OnZutatenClick()
     }
 
-    %% Checkout (Bezahlen)
     class CheckoutWindow {
-        +CheckoutWindow()
-        -void OnBarClick()
-        -void OnKarteClick()
-        -void OnCancelClick()
+        +OnCancelClick()
     }
 
-    %% Zutaten (Küche)
-    class IngredientsWindow {
-        +string ResultString
-        -List~CheckBox~ _checkBoxes
-        +IngredientsWindow(string produktName, List~string~ zutaten)
-        -void OnSaveClick()
-        -void OnCancelClick()
+    class MenuViewModel {
+        +ObservableCollection~BestellPosition~ Bestellungen
+        +BestellPosition SelektiertePosition
+        +LoeschePosition()
+        +FuegeProduktHinzu(string, string)
     }
 
-    %% Preisliste (Info)
-    class PriceWindow {
-        +PriceWindow()
-        -void OnCloseClick()
+    class CheckoutViewModel {
+        +string Vorname [Required]
+        +string Name [Required]
+        +string Adresse [Required]
+        +async Task BarZahlen()
+        +async Task KarteZahlen()
     }
 
-    %% Popup Helper (Fragen)
-    class OptionWindow {
-        +string SelectedOption
-        +OptionWindow(string titel, List~string~ optionen)
+    class BestellPosition {
+        +string Name
+        +int Menge
+        +decimal GesamtPreis
     }
 
-    class MenuConfigWindow {
-        +string ResultString
-        +MenuConfigWindow(string burgerName)
-    }
+%% Vererbungen zeigen (Wichtig für Kriterium Objektorientierung)
+    ViewModelBase <|-- MenuViewModel
+    ViewModelBase <|-- CheckoutViewModel
 
-    %% Beziehungen (Wer ruft wen auf?)
+%% Beziehungen
+    MainWindow ..> MenuWindow : öffnet
     MenuWindow ..> CheckoutWindow : öffnet
-    MenuWindow ..> IngredientsWindow : öffnet & liest Daten
-    MenuWindow ..> PriceWindow : zeigt an
-    MenuWindow ..> OptionWindow : fragt Nutzer
-    MenuWindow ..> MenuConfigWindow : konfiguriert Menü
+    MenuWindow *-- MenuViewModel : DataContext
+    CheckoutWindow *-- CheckoutViewModel : DataContext
+    MenuViewModel "1" *-- "many" BestellPosition : enthält
