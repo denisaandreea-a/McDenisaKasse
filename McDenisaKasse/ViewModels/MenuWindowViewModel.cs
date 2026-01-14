@@ -10,7 +10,7 @@ namespace McDenisaKasse.ViewModels
     // erbe von ViewModelBase, damit ich die Funktionen für Updates habe.
     public partial class MenuViewModel : ViewModelBase
     {
-        // Ich benutze ObservableCollection und nicht normale List.
+        // Ich benutze ObservableCollection, nicht normale List.
         // Liste sagt der GUI automatisch Bescheid, wenn was neu kommt oder weg geht.
         public ObservableCollection<BestellPosition> Bestellungen { get; } = new();
         
@@ -112,7 +112,7 @@ namespace McDenisaKasse.ViewModels
         }
 
         // Private Methode um alles zusammen zu rechnen.
-        // Sum() Funktion mit Lambda
+        // Sum() Funktion mit Lambda(kurze Funktion ohne Namen) -> kurzer Weg, um einer Methode zu sagen, was sie pro Element machen soll
         private void UpdateGesamtSumme()
         {
             decimal summe = Bestellungen.Sum(p => p.GesamtPreis);

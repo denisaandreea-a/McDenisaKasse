@@ -26,8 +26,8 @@ namespace McDenisaKasse.Models
             return new List<string>();
         }
 
-        // OPTIONEN (genau wie in deinem Code)
-        // Für Pommes & Milkshake Größe (in deinem Code war das gleich: Klein, Mittel, Groß)
+        // OPTIONEN (
+        // Für Pommes & Milkshake Größe 
         public static List<string> GetStandardGroessen() 
         {
             return new List<string> { "Klein", "Mittel", "Groß" };
@@ -38,7 +38,7 @@ namespace McDenisaKasse.Models
             return new List<string> { "6er", "9er", "20er" };
         }
 
-        // Soßen für Nuggets (Mit "Curry" und "Mayonaisse")
+        // Soßen für Nuggets 
         public static List<string> GetNuggetSossen()
         {
             return new List<string> { "Mayonaisse", "Ketchup", "Süßsauer", "Curry", "BBQ", "Senf" };
@@ -76,7 +76,7 @@ namespace McDenisaKasse.Models
             return new List<string> { "Kaffee Crema", "Latte Macchiato", "Cappuccino", "Espresso", "Heiße Schokolade" };
         }
         
-        // Für Happy Meal (habe ich ergänzt, damit es nicht leer ist)
+        // Für Happy Meal 
         public static List<string> GetHappyMealNachtisch()
         {
             return new List<string> { "Apfeltüte", "Fruchtquatsch", "McFreezy Eis" };

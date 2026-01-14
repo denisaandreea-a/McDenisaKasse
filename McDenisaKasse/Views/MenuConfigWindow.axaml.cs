@@ -26,7 +26,7 @@ namespace McDenisaKasse.Views
             _burgerName = burgerName; // Ich speichere in Variable
 
             // Ich suche den TextBlock in XAML Design um Titel zu ändern.
-            // (Achtung: Im XAML muss x:Name="TitelText" sein!)
+            // (Im XAML muss x:Name="TitelText" sein!)
             var titelBlock = this.FindControl<TextBlock>("TitelText"); 
             if (titelBlock != null)
             {

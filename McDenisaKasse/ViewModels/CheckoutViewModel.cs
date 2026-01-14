@@ -4,16 +4,13 @@ using System;
 
 namespace McDenisaKasse.ViewModels
 {
-    // Diese Klasse ist für Logik von Kasse. 
+    // Logik von Kasse. 
     // Erbt von ObservableObject damit UI update bekommt automatisch.
     public partial class CheckoutViewModel : ObservableObject
     {
-        // =========================================================
         // DATEN (Properties)
-        // =========================================================
         
-        // Mit [ObservableProperty] ich muss nicht viel Code schreiben.
-        // Computer macht automatisch getter, setter und PropertyChanged Event.
+        // Mit [ObservableProperty] nicht viel Code schreiben (Computer macht automatisch getter, setter und PropertyChanged Event)
         
         [ObservableProperty]
         private string _vorname;
@@ -27,17 +24,13 @@ namespace McDenisaKasse.ViewModels
         // Default Wert ist leerer String damit nicht null error kommt
         [ObservableProperty]
         private string _kommentar = "";
-
-        // =========================================================
+        
         // COMMANDS (Aktionen für Buttons)
-        // =========================================================
-
-        // Das ersetzt "Click" Event. RelayCommand ist profi Weg für MVVM.
+        // Das ersetzt "Click" Event
         [RelayCommand]
         private void BarZahlen()
         {
             // Hier ich simuliere speichern.
-            // Später vielleicht Datenbank Verbindung machen.
             Console.WriteLine("Zahlung BAR gestartet...");
             Console.WriteLine($"Kunde: {Vorname} {Name}");
             

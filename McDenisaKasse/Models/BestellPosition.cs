@@ -1,17 +1,17 @@
 namespace McDenisaKasse.Models
 {
-    // Das ist Model Klasse. Hier ich speichere nur Daten, keine Logik für Fenster.
+    // Model Klasse (speichere nur Daten, keine Logik für Fenster)
     // Ein Objekt von diese Klasse ist eine Zeile auf Rechnung.
     public class BestellPosition
     {
-        // Das sind Properties (Eigenschaften).
+        // Properties (Eigenschaften).
         // get, set kann lesen und schreiben.
         public string Name { get; set; } = "";       // Name von Produkt
         public int Menge { get; set; } = 1;          // Wie viel Stück
         public decimal EinzelPreis { get; set; }     // Preis für ein Stück
         public string ZusatzInfo { get; set; } = ""; // Extra Info (z.B. ohne Soße)
 
-        // Hier ich benutze "Expression Body" (Pfeil =>).
+        // "Expression Body" (Pfeil =>).
         // Das rechnet Preis immer neu wenn ich abfrage. 
         // Ist nur get, man kann nicht setzen.
         public decimal GesamtPreis => Menge * EinzelPreis;

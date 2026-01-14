@@ -11,7 +11,7 @@ namespace McDenisaKasse.Views
             InitializeComponent();
             
             // WICHTIG: Hier verbinde ich Fenster mit ViewModel.
-            // Ohne das funktioniert Binding nicht.
+            // Ohne das funktioniert Binding nicht!!
             DataContext = new CheckoutViewModel();
         }
 

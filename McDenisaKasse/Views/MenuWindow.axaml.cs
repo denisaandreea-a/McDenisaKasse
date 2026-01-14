@@ -17,10 +17,9 @@ namespace McDenisaKasse.Views
             DataContext = _viewModel;
         }
 
-        // =========================================================
+       
         // PRODUKTE KLICKEN
-        // =========================================================
-        public async void OnProduktClick(object sender, RoutedEventArgs e)
+        public async void OnProduktClick(object sender, RoutedEventArgs e) //Mit async kann die Aufgabe im Hintergrund laufen, während die App weiterhin auf Benutzereingaben reagiert
         {
             var button = (Button)sender;
             if (button.Content == null) return; 
@@ -129,9 +128,8 @@ namespace McDenisaKasse.Views
             }
         }
 
-        // =========================================================
+        
         // ZUTATEN ÄNDERN
-        // =========================================================
         private async void OnZutatenClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = _viewModel.SelektiertePosition;
