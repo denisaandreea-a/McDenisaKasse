@@ -57,8 +57,15 @@
                              ItemsSource="{Binding Bestellungen}"
                              SelectedItem="{Binding SelektiertePosition}"
                              Background="Transparent"
-                             FontSize="16"/>
-
+                             FontSize="16"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"> 
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" Foreground="Black" /> 
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
                     <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1,0,0" Padding="10" Background="WhiteSmoke">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                             <TextBlock Text="Gesamt: " FontWeight="Bold" FontSize="20"/>

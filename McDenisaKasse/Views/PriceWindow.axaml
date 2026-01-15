@@ -1,29 +1,29 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="McDenisaKasse.Views.PriceWindow"
-        Title="Preisliste" Width="400" Height="600"
+        Title="Detaillierte Preisliste" Width="500" Height="800"
         WindowStartupLocation="CenterScreen"
         SystemDecorations="BorderOnly"
         Background="White">
 
     <Window.Styles>
         <Style Selector="TextBlock.Item">
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,3"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.Price">
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Margin" Value="0,3"/>
         </Style>
         <Style Selector="TextBlock.Category">
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="DarkRed"/>
-            <Setter Property="Margin" Value="0,20,0,5"/>
+            <Setter Property="Margin" Value="0,15,0,5"/>
             <Setter Property="TextDecorations" Value="Underline"/>
         </Style>
     </Window.Styles>
@@ -31,91 +31,99 @@
     <Border BorderBrush="Black" BorderThickness="2" Padding="20">
         <Grid RowDefinitions="Auto, *, Auto">
             
-            <TextBlock Grid.Row="0" Text="Aktuelle Preisliste" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <TextBlock Grid.Row="0" Text="Unsere Produkte &amp; Preise" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
 
             <ScrollViewer Grid.Row="1">
-                <StackPanel>
-                    <Grid ColumnDefinitions="*, Auto">
-                        
-                        <StackPanel Grid.Column="0">
-                            <TextBlock Classes="Category" Text="Menüs"/>
-                            <TextBlock Classes="Item" Text="Big Mac Menü"/>
-                            <TextBlock Classes="Item" Text="McChicken Menü"/>
-                            <TextBlock Classes="Item" Text="Royal TS Menü"/>
-                            <TextBlock Classes="Item" Text="Royal Käse Menü"/>
-                            <TextBlock Classes="Item" Text="McRib Menü"/>
+                <Grid ColumnDefinitions="*, Auto">
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Classes="Category" Text="Menüs"/>
+                        <TextBlock Classes="Item" Text="Big Mac Menu"/>
+                        <TextBlock Classes="Item" Text="McChicken Menu"/>
+                        <TextBlock Classes="Item" Text="Royal TS Menu"/>
+                        <TextBlock Classes="Item" Text="Royal Käse Menu"/>
+                        <TextBlock Classes="Item" Text="McRib Menu"/>
 
-                            <TextBlock Classes="Category" Text="Happy Meal"/>
-                            <TextBlock Classes="Item" Text="Happy Meal 4er-Nuggets"/>
-                            <TextBlock Classes="Item" Text="Happy Meal Cheese-Burger"/>
-                            <TextBlock Classes="Item" Text="Happy Meal Hamburger"/>
+                        <TextBlock Classes="Category" Text="Happy Meal"/>
+                        <TextBlock Classes="Item" Text="Alle Happy Meal Varianten"/>
 
-                            <TextBlock Classes="Category" Text="Burger"/>
-                            <TextBlock Classes="Item" Text="Big Mac"/>
-                            <TextBlock Classes="Item" Text="McChicken"/>
-                            <TextBlock Classes="Item" Text="Royal TS"/>
-                            <TextBlock Classes="Item" Text="Royal Käse"/>
-                            <TextBlock Classes="Item" Text="McRib"/>
-                            <TextBlock Classes="Item" Text="Cheese-Burger"/>
-                            <TextBlock Classes="Item" Text="Double-Cheese-Burger"/>
-                            <TextBlock Classes="Item" Text="Chicken-Burger"/>
-                            <TextBlock Classes="Item" Text="Hamburger"/>
+                        <TextBlock Classes="Category" Text="Burger"/>
+                        <TextBlock Classes="Item" Text="Big Mac / McRib"/>
+                        <TextBlock Classes="Item" Text="Royal TS / Royal Käse"/>
+                        <TextBlock Classes="Item" Text="McChicken"/>
+                        <TextBlock Classes="Item" Text="Double-cheese-burger"/>
+                        <TextBlock Classes="Item" Text="Cheese-burger / Chicken-burger"/>
+                        <TextBlock Classes="Item" Text="Hamburger"/>
 
-                            <TextBlock Classes="Category" Text="Snacks &amp; Beilagen"/>
-                            <TextBlock Classes="Item" Text="Nuggets (6er/9er/20er)"/>
-                            <TextBlock Classes="Item" Text="Pommes (Klein/Mittel/Groß)"/>
-                            <TextBlock Classes="Item" Text="Soße (Extra)"/>
+                        <TextBlock Classes="Category" Text="Chicken Nuggets"/>
+                        <TextBlock Classes="Item" Text="6er Nuggets"/>
+                        <TextBlock Classes="Item" Text="9er Nuggets"/>
+                        <TextBlock Classes="Item" Text="20er Nuggets"/>
 
-                            <TextBlock Classes="Category" Text="Desserts &amp; Getränke"/>
-                            <TextBlock Classes="Item" Text="Getränk (0,4l / 0,5l)"/>
-                            <TextBlock Classes="Item" Text="Milkshake"/>
-                            <TextBlock Classes="Item" Text="Eis"/>
-                            <TextBlock Classes="Item" Text="Apfeltasche"/>
-                            <TextBlock Classes="Item" Text="McCafé Spezialität"/>
-                        </StackPanel>
+                        <TextBlock Classes="Category" Text="Pommes Frites"/>
+                        <TextBlock Classes="Item" Text="Pommes Klein"/>
+                        <TextBlock Classes="Item" Text="Pommes Mittel"/>
+                        <TextBlock Classes="Item" Text="Pommes Groß"/>
 
-                        <StackPanel Grid.Column="1">
-                            <TextBlock Classes="Category" Text=""/> <TextBlock Classes="Price" Text="9,49 €"/>
-                            <TextBlock Classes="Price" Text="8,99 €"/>
-                            <TextBlock Classes="Price" Text="9,99 €"/>
-                            <TextBlock Classes="Price" Text="9,99 €"/>
-                            <TextBlock Classes="Price" Text="9,49 €"/>
+                        <TextBlock Classes="Category" Text="Softdrinks"/>
+                        <TextBlock Classes="Item" Text="Getränk 0,25l"/>
+                        <TextBlock Classes="Item" Text="Getränk 0,4l"/>
+                        <TextBlock Classes="Item" Text="Getränk 0,5l"/>
 
-                            <TextBlock Classes="Category" Text=""/>
-                            <TextBlock Classes="Price" Text="4,99 €"/>
-                            <TextBlock Classes="Price" Text="4,99 €"/>
-                            <TextBlock Classes="Price" Text="4,99 €"/>
+                        <TextBlock Classes="Category" Text="Extras &amp; Desserts"/>
+                        <TextBlock Classes="Item" Text="Milkshake Klein / Groß"/>
+                        <TextBlock Classes="Item" Text="Eis / McFlurry"/>
+                        <TextBlock Classes="Item" Text="McCafé Spezialität"/>
+                        <TextBlock Classes="Item" Text="Apfeltasche"/>
+                        <TextBlock Classes="Item" Text="Extra Soße"/>
+                    </StackPanel>
 
-                            <TextBlock Classes="Category" Text=""/>
-                            <TextBlock Classes="Price" Text="5,49 €"/>
-                            <TextBlock Classes="Price" Text="4,99 €"/>
-                            <TextBlock Classes="Price" Text="5,99 €"/>
-                            <TextBlock Classes="Price" Text="5,99 €"/>
-                            <TextBlock Classes="Price" Text="5,49 €"/>
-                            <TextBlock Classes="Price" Text="1,99 €"/>
-                            <TextBlock Classes="Price" Text="2,99 €"/>
-                            <TextBlock Classes="Price" Text="1,99 €"/>
-                            <TextBlock Classes="Price" Text="1,79 €"/>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="9,49 €"/>
+                        <TextBlock Classes="Price" Text="8,99 €"/>
+                        <TextBlock Classes="Price" Text="9,99 €"/>
+                        <TextBlock Classes="Price" Text="9,99 €"/>
+                        <TextBlock Classes="Price" Text="9,49 €"/>
 
-                            <TextBlock Classes="Category" Text=""/>
-                            <TextBlock Classes="Price" Text="ab 4,49 €"/>
-                            <TextBlock Classes="Price" Text="ab 2,99 €"/>
-                            <TextBlock Classes="Price" Text="0,50 €"/>
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="4,99 €"/>
 
-                            <TextBlock Classes="Category" Text=""/>
-                            <TextBlock Classes="Price" Text="2,79 €"/>
-                            <TextBlock Classes="Price" Text="2,99 €"/>
-                            <TextBlock Classes="Price" Text="3,49 €"/>
-                            <TextBlock Classes="Price" Text="1,49 €"/>
-                            <TextBlock Classes="Price" Text="2,99 €"/>
-                        </StackPanel>
-                    </Grid>
-                </StackPanel>
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="5,49 €"/>
+                        <TextBlock Classes="Price" Text="5,99 €"/>
+                        <TextBlock Classes="Price" Text="4,99 €"/>
+                        <TextBlock Classes="Price" Text="2,99 €"/>
+                        <TextBlock Classes="Price" Text="1,99 €"/>
+                        <TextBlock Classes="Price" Text="1,79 €"/>
+
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="4,49 €"/>
+                        <TextBlock Classes="Price" Text="6,49 €"/>
+                        <TextBlock Classes="Price" Text="12,49 €"/>
+
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="2,99 €"/>
+                        <TextBlock Classes="Price" Text="3,49 €"/>
+                        <TextBlock Classes="Price" Text="3,99 €"/>
+
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="2,39 €"/>
+                        <TextBlock Classes="Price" Text="2,79 €"/>
+                        <TextBlock Classes="Price" Text="3,19 €"/>
+
+                        <TextBlock Classes="Category" Text=""/>
+                        <TextBlock Classes="Price" Text="2,99 € / 3,89 €"/>
+                        <TextBlock Classes="Price" Text="3,49 €"/>
+                        <TextBlock Classes="Price" Text="2,99 €"/>
+                        <TextBlock Classes="Price" Text="1,49 €"/>
+                        <TextBlock Classes="Price" Text="0,50 €"/>
+                    </StackPanel>
+                </Grid>
             </ScrollViewer>
 
             <Button Grid.Row="2" Content="Schließen" 
                     HorizontalAlignment="Center" Width="150" Height="40"
-                    Margin="0,20,0,0" Background="Gray" Foreground="White"
+                    Margin="0,20,0,0" Background="#DD0000" Foreground="White"
                     Click="OnCloseClick"/>
         </Grid>
     </Border>

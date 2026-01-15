@@ -8,7 +8,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="" />
+    <list default="true" id="df9f8ba1-e7dd-4a4a-913d-4216f73e203e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.McDenisaKasse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Diagramm.mmd" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Diagramm.mmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Models/BestellPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Models/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Models/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MenuWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/ViewModels/MenuWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/CheckoutWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/IngredientsWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/MenuWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/McDenisaKasse/Views/PriceWindow.axaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +139,8 @@
       <workItem from="1767885759483" duration="8324000" />
       <workItem from="1768345168005" duration="2907000" />
       <workItem from="1768398170345" duration="1578000" />
+      <workItem from="1768421142111" duration="915000" />
+      <workItem from="1768482428825" duration="4338000" />
     </task>
     <task id="LOCAL-00001" summary="updated .gitignore">
       <option name="closed" value="true" />
@@ -186,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768398774116</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Diagramm (update)">
+      <option name="closed" value="true" />
+      <created>1768421216517</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768421216517</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +234,8 @@
     <MESSAGE value="MVVM update" />
     <MESSAGE value="Verbesserungen" />
     <MESSAGE value="Nebenläufigkeit, Datenvalidierung" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nebenläufigkeit, Datenvalidierung" />
+    <MESSAGE value="Diagramm (update)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diagramm (update)" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="fu" />
   </component>
 </project>

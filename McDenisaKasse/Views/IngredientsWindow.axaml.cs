@@ -31,9 +31,9 @@ namespace McDenisaKasse.Views
             {
                 // Erstelle neue Checkbox mit Code (nicht in Designer)
                 var cb = new CheckBox();
-                cb.Content = zutat;      // Name von Zutat (z.B. "Käse")
-                cb.IsChecked = true;     // Am Anfang ist Haken drin (Standard ist immer mit alles)
-                cb.FontSize = 18;        // Schrift größer machen
+                cb.Content = zutat; // Name von Zutat 
+                cb.IsChecked = true; // Am Anfang ist Haken drin (Standard ist immer mit alles)
+                cb.FontSize = 18;       
                 cb.Margin = new Avalonia.Thickness(10, 0); // Bischen Abstand lassen
                 
                 // Ich tue Checkbox in meine private Liste _checkBoxes (zum merken)

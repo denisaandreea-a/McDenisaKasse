@@ -32,13 +32,13 @@
             <ScrollViewer Grid.Row="2">
                 <StackPanel>
                     <TextBlock Text="Vorname:"/>
-                    <TextBox Text="{Binding Vorname}" Watermark="Max"/>
+                    <TextBox Text="{Binding Vorname}" Watermark="Denisa-Andreea"/>
 
                     <TextBlock Text="Name:"/>
-                    <TextBox Text="{Binding Name}" Watermark="Mustermann"/>
+                    <TextBox Text="{Binding Name}" Watermark="Anton"/>
 
                     <TextBlock Text="Adresse:"/>
-                    <TextBox Text="{Binding Adresse}" Watermark="Musterstraße 1, 12345 Berlin"/>
+                    <TextBox Text="{Binding Adresse}" Watermark="Musterstraße 1, 12345 Hamm"/>
 
                     <TextBlock Text="Wann soll geliefert werden?" Margin="0,15,0,5"/>
                     <StackPanel Margin="10,0,0,0">

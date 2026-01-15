@@ -6,9 +6,9 @@ namespace McDenisaKasse.Models
     {
         // Properties (Eigenschaften).
         // get, set kann lesen und schreiben.
-        public string Name { get; set; } = "";       // Name von Produkt
-        public int Menge { get; set; } = 1;          // Wie viel Stück
-        public decimal EinzelPreis { get; set; }     // Preis für ein Stück
+        public string Name { get; set; } = "";// Name von Produkt
+        public int Menge { get; set; } = 1;// Wie viel Stück
+        public decimal EinzelPreis { get; set; }// Preis für ein Stück
         public string ZusatzInfo { get; set; } = ""; // Extra Info (z.B. ohne Soße)
 
         // "Expression Body" (Pfeil =>).
