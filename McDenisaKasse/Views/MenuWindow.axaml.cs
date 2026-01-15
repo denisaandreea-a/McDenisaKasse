@@ -59,17 +59,21 @@ namespace McDenisaKasse.Views
                 if (wahl != null) 
                     _viewModel.FuegeProduktHinzu("Pommes", $"({wahl})");
             }
-            // 4. NUGGETS
+            // In der Datei: MenuWindow.axaml.cs
+
+// 4. NUGGETS
             else if (produktName.Contains("Nuggets"))
             {
                 string menge = await FrageStellen("Wie viele?", ProductService.GetNuggetAnzahl());
                 if (menge == null) return;
-                
-                // Hier nehme ich die Liste mit Curry & Mayonaisse
+    
                 string sosse = await FrageStellen("Welche Soße?", ProductService.GetNuggetSossen());
-                
+    
                 if (sosse != null) 
-                    _viewModel.FuegeProduktHinzu($"Nuggets {menge}", $"({sosse})");
+                {
+                    //"Nuggets" als Name, Menge und Soße landen im Zusatz, sonst kosten alle Nuggets gleich
+                    _viewModel.FuegeProduktHinzu("Nuggets", $"{menge} ({sosse})");
+                }
             }
             // 5. EIS
             else if (produktName.Contains("Eis") || produktName.Contains("Eis")) 
